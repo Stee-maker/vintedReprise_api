@@ -8,7 +8,7 @@ const cors = require("cors");
 app.use(formidable());
 app.use(cors);
 
-mongoose.connect("mongodb://localhost:27017/vinted_reprise");
+mongoose.connect(process.env.MONGODB_URI);
 const cloudinary = require("cloudinary").v2;
 
 cloudinary.config({
