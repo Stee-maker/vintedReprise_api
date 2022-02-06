@@ -8,7 +8,10 @@ const cors = require("cors");
 app.use(formidable());
 app.use(cors);
 
-mongoose.connect(process.env.MONGODB_URI);
+mongoose.connect(process.env.MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 const cloudinary = require("cloudinary").v2;
 
 cloudinary.config({
